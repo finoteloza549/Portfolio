@@ -6,7 +6,7 @@ This website represents my journey as a frontend developer and highlights the pr
 
 ##  Live Demo
 
-https://vercel.com/finoteloza-portfolio-website
+https://portfolio-website-black-two-97.vercel.app/
 
 ## About Me
 
