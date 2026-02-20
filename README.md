@@ -1,16 +1,16 @@
 # Personal Portfolio Website
 
-A modern and responsive **personal portfolio website** built with HTML, CSS, and JavaScript to showcase my skills, projects, and contact information.
+A modern and responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase my skills, projects, and contact information.
 
 This website represents my journey as a frontend developer and highlights the projects I have built while learning web development.
 
-##  Live Demo
+##  Live link
 
 https://portfolio-website-black-two-97.vercel.app/
 
 ## About Me
 
-Hi! I'm **Finoteloza (Loza)**, a 3rd-year Software Engineering student passionate about frontend development.
+Hi! I'm Finoteloza, a 3rd-year Software Engineering student passionate about frontend development.
 
 I enjoy building responsive and user-friendly websites and continuously improving my skills by creating real-world projects. I am currently seeking internship opportunities to gain practical experience and grow as a developer.
 
@@ -29,8 +29,7 @@ I enjoy building responsive and user-friendly websites and continuously improvin
 - HTML5  
 - CSS3  
 - JavaScript  
-- Bootstrap (basics)
-- 
+  
 ## Sections Included
 
 - About Me  
@@ -41,7 +40,7 @@ I enjoy building responsive and user-friendly websites and continuously improvin
 ## How to Use
 Open `index.html` in your browser
 
-## 🌟 Projects Included
+##  Projects Included
 
 - Portfolio Website  
 - To-Do List App  
