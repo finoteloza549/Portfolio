@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
+  // ===== Footer year =====
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
   // ===== Mobile Menu Toggle =====
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const nav = document.querySelector('.nav');
@@ -73,5 +77,74 @@
         });
       }
     });
+  });
+
+  // ===== Contact form (Google-form style) =====
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  function setFormStatus(message, kind) {
+    if (!formStatus) return;
+    formStatus.classList.remove('ok', 'err');
+    if (kind) formStatus.classList.add(kind);
+    formStatus.textContent = message || '';
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = String(document.getElementById('name')?.value || '').trim();
+      const email = String(document.getElementById('email')?.value || '').trim();
+      const subject = String(document.getElementById('subject')?.value || '').trim();
+      const message = String(document.getElementById('message')?.value || '').trim();
+
+      if (!name || !email || !subject || !message) {
+        setFormStatus('Please fill in all fields.', 'err');
+        return;
+      }
+
+      const to = 'lozawanaw@gmail.com';
+      const mailSubject = encodeURIComponent('Portfolio message: ' + subject);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        message
+      );
+
+      setFormStatus('Opening your email app...', 'ok');
+      window.location.href = 'mailto:' + to + '?subject=' + mailSubject + '&body=' + body;
+      contactForm.reset();
+      setTimeout(function () {
+        setFormStatus('Message prepared. If your email app didn’t open, copy your message and email me directly.', 'ok');
+      }, 800);
+    });
+  }
+
+  // ===== Scroll reveal motion =====
+  const revealEls = document.querySelectorAll('.reveal');
+  if (!revealEls.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) {
+      el.classList.add('in-view');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  revealEls.forEach(function (el) {
+    observer.observe(el);
   });
 })();
