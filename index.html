@@ -1,320 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finoteloza Wanaw | Frontend developer</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finoteloza | Frontend Developer</title>
+    <!-- Boxicons for Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Header / Navigation -->
-  <header class="header">
-    <a href="#about" class="logo">Finoteloza Wanaw</a>
-    <nav class="nav">
-      <ul class="nav-list">
-        <li><a href="#about" class="nav-link active">About Me</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-      
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="about" class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        Hi, It's <span class="highlight">Finoteloza</span>
-      </h1>
-      <p class="hero-subtitle">I'm a <span class="underline">Frontend Developer</span></p>
-      <p class="hero-desc">
-        Hi, I’m Finoteloza, a 3rd-year Software Engineering student passionate about web development.
-        I enjoy creating responsive and user-friendly websites using HTML, CSS, Bootstrap, and JavaScript.
-        I am currently improving my frontend skills by building real projects and learning new technologies.
-        I am looking for an internship opportunity where I can gain practical experience and grow as a developer.
-      </p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/finoteloza-wanaw-3b22863a9/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/finoteloza549" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      
-      </div>
-      <div class="hero-buttons">
-    
-        <a href="#contact" class="btn btn-outline">Contact</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-glow"></div>
-      <div class="hero-image-wrap">
-        <img src="photo.jpg" alt="Finoteloza Wanaw" class="hero-image">
-      </div>
-    </div>
-  </section>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#" class="logo">Finoteloza Wanaw</a>
 
-  <!-- skills Section -->
-  <section id="skills" class="section section-skills">
-    <div class="section-head reveal">
-      <h2 class="section-title">Skills</h2>
-      <p class="section-desc">
-        Technologies and tools I’m comfortable with as a frontend developer.
-      </p>
-    </div>
+        <div class="bx bx-menu" id="menu-icon"></div>
 
-    <div class="skills-grid">
-      <article class="skill-card reveal">
-        <h3 class="skill-title">Frontend</h3>
-        <p class="skill-text">Building responsive interfaces for web apps and portfolios.</p>
-        <ul class="skill-tags" aria-label="Frontend skills">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript (Basics)</li>
-          <li>Bootstrap</li>
-          <li>Responsive Design</li>
-        </ul>
-      </article>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
 
-      <article class="skill-card reveal">
-        <h3 class="skill-title">Programming</h3>
-        <p class="skill-text">Writing clean and readable code while learning new concepts.</p>
-        <ul class="skill-tags" aria-label="Programming skills">
-          <li>Basic Java</li>
-          <li>Problem Solving</li>
-          <li>Debugging</li>
-        </ul>
-      </article>
+            <div class="theme-btn">
+                <i class='bx bx-moon' id="theme-toggle"></i>
+            </div>
+        </nav>
+    </header>
 
-      <article class="skill-card reveal">
-        <h3 class="skill-title">Tools & Collaboration</h3>
-        <p class="skill-text">Working in teams and managing code for real projects.</p>
-        <ul class="skill-tags" aria-label="Tools and soft skills">
-          <li>VS Code</li>
-          <li>Git & GitHub</li>
-          <li>Teamwork</li>
-          <li>Communication</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content fade-in">
+            <h3>Hello, It's Me</h3>
+            <h1>Software Engineer</h1>
+            <h3>And I'm a <span class="multiple-text">Frontend Developer</span></h3>
+            <p>I’m a passionate Frontend Developer and 3rd-year Software Engineering student focused on building
+                responsive and user-friendly web applications. I enjoy transforming ideas into interactive digital
+                experiences using HTML, CSS, JugioyupohiouoihuoavaScript, and modern tools. Currently seeking an internship opportunity
+                where I can contribute, learn, and grow as a developer.</p>
 
-  <!-- projects Section -->
-  <section id="projects" class="section section-projects">
-    <div class="section-head reveal">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-desc">Some things I built recently.</p>
-    </div>
-
-    <div class="projects-list">
-      <article class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">Portfolio Website</h3>
-          <p class="project-text">
-            A personal portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects. Fully responsive for mobile and desktop.
-          </p>
-          <ul class="project-tags" aria-label="Technologies used">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-          <div class="project-actions">
-            <a class="btn btn-primary btn-sm" href="https://github.com/finoteloza549/Portfolio" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
-            </a>
-            <a class="btn btn-outline btn-sm" href="https://portfolio-website-black-two-97.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Live</span>
-            </a>
-          </div>
-        </div>
-        <div class="project-media">
-          <img src="portfolio-pic.png" alt="Portfolio Website screenshot" loading="lazy">
-        </div>
-      </article>
-
-      <article class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">To-Do List App</h3>
-          <p class="project-text">
-            A task management app that lets users add, delete, and mark tasks as complete. It uses localStorage to keep tasks saved.
-          </p>
-          <ul class="project-tags" aria-label="Technologies used">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>localStorage</li>
-          </ul>
-          <div class="project-actions">
-            <a class="btn btn-primary btn-sm" href="https://github.com/finoteloza549/To-Do-List" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
-            </a>
-            <a class="btn btn-outline btn-sm" href="https://to-do-list-app-dun-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Live</span>
-            </a>
-          </div>
-        </div>
-        <div class="project-media">
-          <img src="to-do pic.png" alt="To-Do List App screenshot" loading="lazy">
-        </div>
-      </article>
-
-      <article class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">Calculator App</h3>
-          <p class="project-text">
-            A basic calculator that performs arithmetic operations. This project helped me practice DOM manipulation and event handling.
-          </p>
-          <ul class="project-tags" aria-label="Technologies used">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-          <div class="project-actions">
-            <a class="btn btn-primary btn-sm" href="https://github.com/finoteloza549/Calculator-App" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
-            </a>
-            <a class="btn btn-outline btn-sm" href="https://calculator-app-tau-lime.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Live</span>
-            </a>
-          </div>
-        </div>
-        <div class="project-media">
-          <img src="calculator-pic.png" alt="Calculator App screenshot" loading="lazy">
-        </div>
-      </article>
-
-      <article class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">Weather App</h3>
-          <p class="project-text">
-            A responsive weather app that fetches real-time data from the OpenWeatherMap API and shows temperature, condition, humidity, wind speed, and icons.
-          </p>
-          <ul class="project-tags" aria-label="Technologies used">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>API</li>
-          </ul>
-          <div class="project-actions">
-            <a class="btn btn-primary btn-sm" href="https://github.com/finoteloza549/Weather-app" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
-            </a>
-            <a class="btn btn-outline btn-sm" href="https://weather-app-pied-iota-68.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>Live</span>
-            </a>
-          </div>
-        </div>
-        <div class="project-media">
-          <img src="weather-pic.png" alt="Weather App screenshot" loading="lazy">
-        </div>
-      </article>
-    </div>
-  </section>
-
-  
-
-  <!-- Contact Section -->
-  <section id="contact" class="section section-contact">
-    <div class="section-head reveal">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-desc">Send me a message — I usually reply quickly.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-card reveal">
-        <h3 class="contact-title">Contact details</h3>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-label">Email</span>
-            <a class="contact-value" href="mailto:lozawanaw@gmail.com">lozawanaw@gmail.com</a>
-          </li>
-          <li>
-            <span class="contact-label">Phone</span>
-            <a class="contact-value" href="tel:+251964866786">(+251) 964 866 786</a>
-          </li>
-        </ul>
-        <p class="contact-note">
-          For faster response, you can also reach me using the social icons in the footer.
-        </p>
-      </div>
-
-      <!-- Google Form style (no backend needed) -->
-      <div class="gform reveal" aria-label="Message form">
-        <div class="gform-topbar" aria-hidden="true"></div>
-        <div class="gform-inner">
-          <div class="gform-head">
-            <h3 class="gform-title">Message me</h3>
-            <p class="gform-subtitle">This form will open your email app to send the message.</p>
-          </div>
-
-          <form id="contactForm" class="gform-form">
-            <div class="gform-row">
-              <label class="gform-label" for="name">Name</label>
-              <input class="gform-input" id="name" name="name" type="text" placeholder="Your name" required>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/finoteloza-wanaw-3b22863a9/"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/finoteloza549"><i class='bx bxl-github'></i></a>
+                <a href="https://t.me/fiffyee"><i class='bx bxl-telegram'></i></a>
             </div>
 
-            <div class="gform-row">
-              <label class="gform-label" for="email">Email</label>
-              <input class="gform-input" id="email" name="email" type="email" placeholder="you@example.com" required>
+            <div class="btn-box">
+                <a href="loza cv.pdf" class="btn" download>Download Resume</a>
+                <a href="#contact" class="btn btn-outline">Let's Talk</a>
             </div>
-
-            <div class="gform-row">
-              <label class="gform-label" for="subject">Subject</label>
-              <input class="gform-input" id="subject" name="subject" type="text" placeholder="What’s this about?" required>
-            </div>
-
-            <div class="gform-row">
-              <label class="gform-label" for="message">Message</label>
-              <textarea class="gform-input gform-textarea" id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
-            </div>
-
-            <div class="gform-actions">
-              <button type="submit" class="btn btn-primary">
-                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                <span>Send</span>
-              </button>
-              <p id="formStatus" class="gform-status" aria-live="polite"></p>
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="footer-inner reveal">
-      <div class="footer-brand">
-        <div class="footer-name">Finoteloza Wanaw</div>
-        <div class="footer-sub">Frontend Developer</div>
-      </div>
+        <div class="home-img fade-in">
+            <div class="img-box">
+                <div class="glowing-circle"></div>
+                <div class="glowing-circle-2"></div>
+                
+                <img src="images/me.jpg" alt="Profile Photo" class="profile-img">
+            </div>
+        </div>
+    </section>
 
-      <div class="footer-links" aria-label="Social links">
-        <a href="https://github.com/finoteloza549" class="footer-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/finoteloza-wanaw-3b22863a9/" class="footer-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
-        <a href="https://t.me/fiffyee" class="footer-icon" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-telegram" aria-hidden="true"></i>
-        </a>
-      </div>
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <h2 class="heading fade-in">My <span>Skills</span></h2>
 
-      <div class="footer-copy">
-        <span>© <span id="year"></span> Finoteloza. All rights reserved.</span>
-      </div>
-    </div>
-  </footer>
+        <div class="skills-container fade-in">
+            <div class="skill-box">
+                <i class='bx bxl-html5' style="color: #e34c26;"></i>
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-css3' style="color: #264de4;"></i>
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-javascript' style="color: #f0db4f;"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-bootstrap' style="color: #563d7c;"></i>
+                <h3>Bootstrap</h3>
+            </div>
+            <div class="skill-box">
+                <i class='bx bxl-java' style="color: #f89820;"></i>
+                <h3>Java Basics</h3>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="heading fade-in">Latest <span>Projects</span></h2>
+
+        <div class="portfolio-container">
+            <!-- Project 1 -->
+            <div class="portfolio-box fade-in">
+                <div class="portfolio-img">
+                    <!-- Update with your image name after placing them in the images folder -->
+                    <img src="images/weather-pic.png" alt="Weather App">
+                </div>
+                <div class="portfolio-layer">
+                    <i class='bx bx-cloud-rain project-icon'></i>
+                    <h4>Weather App</h4>
+                    <p>A real-time weather forecasting application.</p>
+                    <ul class="features">
+                        <li><i class='bx bx-check'></i> API Integration</li>
+                        <li><i class='bx bx-check'></i> Dynamic UI Updates</li>
+                        <li><i class='bx bx-check'></i> Location-based Data</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/finoteloza549/Weather-app"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="https://weather-app-pied-iota-68.vercel.app/"><i class='bx bx-link-external'></i> Live Link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="portfolio-box fade-in">
+                <div class="portfolio-img">
+                    <img src="images/to-do pic.png" alt="To-Do List">
+                </div>
+                <div class="portfolio-layer">
+                    <i class='bx bx-list-check project-icon'></i>
+                    <h4>To-Do List</h4>
+                    <p>A responsive task management application.</p>
+                    <ul class="features">
+                        <li><i class='bx bx-check'></i> CRUD Operations</li>
+                        <li><i class='bx bx-check'></i> Local Storage Save</li>
+                        <li><i class='bx bx-check'></i> Interactive UI</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/finoteloza549/To-Do-List"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="https://to-do-list-app-dun-nine.vercel.app/"><i class='bx bx-link-external'></i> Live Link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="portfolio-box fade-in">
+                <div class="portfolio-img">
+                    <img src="images/calculator-pic.png" alt="Calculator App">
+                </div>
+                <div class="portfolio-layer">
+                    <i class='bx bx-calculator project-icon'></i>
+                    <h4>Calculator App</h4>
+                    <p>A functional and visually appealing calculator.</p>
+                    <ul class="features">
+                        <li><i class='bx bx-check'></i> Mathematical Logic</li>
+                        <li><i class='bx bx-check'></i> Clear State Mngmt</li>
+                        <li><i class='bx bx-check'></i> Beautiful Neon UI</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/finoteloza549/Calculator-App"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="https://calculator-app-tau-lime.vercel.app/"><i class='bx bx-link-external'></i> Live Link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 (Portfolio) -->
+            <div class="portfolio-box fade-in">
+                <div class="portfolio-img">
+                    <img src="images/portfolio-pic.png" alt="My Portfolio">
+                </div>
+                <div class="portfolio-layer">
+                    <i class='bx bx-briefcase project-icon'></i>
+                    <h4>My Portfolio</h4>
+                    <p>My personal digital portfolio with premium UI/UX.</p>
+                    <ul class="features">
+                        <li><i class='bx bx-check'></i> Responsive Design</li>
+                        <li><i class='bx bx-check'></i> Light/Dark Theme</li>
+                        <li><i class='bx bx-check'></i> Custom Animations</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/finoteloza549/Portfolio"><i class='bx bxl-github'></i> GitHub</a>
+                        <a href="https://portfolio-website-black-two-97.vercel.app/"><i class='bx bx-link-external'></i> Live Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Optional placeholder) -->
+    <section class="contact" id="contact">
+        <h2 class="heading fade-in">Contact <span>Me!</span></h2>
+        <form action="https://t.me/fiffyee" class="fade-in">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 | All Rights Reserved.</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/finoteloza-wanaw-3b22863a9/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/finoteloza549"><i class='bx bxl-github'></i></a>
+            <a href="https://t.me/fiffyee"><i class='bx bxl-telegram'></i></a>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- ScrollReveal (Optional but good for easy animations, though we'll use Intersection API) -->
+    <script src="script.js"></script>
 </body>
+
 </html>
-
-
