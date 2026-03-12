@@ -1,150 +1,88 @@
-(function () {
-  'use strict';
+// --- Toggle Icon Navbar ---
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-  // ===== Footer year =====
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
 
-  // ===== Mobile Menu Toggle =====
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('.nav');
-  const navLinks = document.querySelectorAll('.nav-link');
+// --- Sticky Navbar & Highlight Active Link ---
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
 
-  if (mobileMenuBtn && nav) {
-    mobileMenuBtn.addEventListener('click', function () {
-      nav.classList.toggle('open');
-      mobileMenuBtn.classList.toggle('active');
-      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
     });
 
-    // Close menu when clicking a link
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('open');
-        mobileMenuBtn.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-  }
+    // Sticky Navbar
+    let header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 100);
 
-  // ===== Active Nav Link on Scroll =====
-  const sections = document.querySelectorAll('section[id]');
+    // Remove toggle icon and navbar when click navbar link (scroll)
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
 
-  function setActiveLink() {
-    const scrollY = window.pageYOffset;
+// --- Dark / Light Mode Toggle ---
+const themeToggle = document.getElementById('theme-toggle');
+const htmlTag = document.documentElement;
 
-    sections.forEach(function (section) {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 120;
-      const sectionId = section.getAttribute('id');
-      const link = document.querySelector('.nav-link[href="#' + sectionId + '"]');
+// Check for saved theme in localStorage
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark';
+htmlTag.setAttribute('data-theme', currentTheme);
 
-      if (link && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navLinks.forEach(function (l) {
-          l.classList.remove('active');
-        });
-        link.classList.add('active');
-      }
-    });
-  }
+if (currentTheme === 'light') {
+    themeToggle.classList.replace('bx-moon', 'bx-sun');
+} else {
+    themeToggle.classList.replace('bx-sun', 'bx-moon');
+}
 
-  window.addEventListener('scroll', setActiveLink);
-  setActiveLink(); // Run once on load
+themeToggle.addEventListener('click', () => {
+    let currentMode = htmlTag.getAttribute('data-theme');
+    
+    if (currentMode === 'dark') {
+        htmlTag.setAttribute('data-theme', 'light');
+        themeToggle.classList.replace('bx-moon', 'bx-sun');
+        localStorage.setItem('theme', 'light');
+    } else {
+        htmlTag.setAttribute('data-theme', 'dark');
+        themeToggle.classList.replace('bx-sun', 'bx-moon');
+        localStorage.setItem('theme', 'dark');
+    }
+});
 
-  // ===== Header background on scroll =====
-  const header = document.querySelector('.header');
-  if (header) {
-    window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 50) {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
-      } else {
-        header.style.background = 'rgba(10, 10, 10, 0.9)';
-      }
-    });
-  }
+// --- Scroll Fade-in Animation Observer ---
+const faders = document.querySelectorAll('.fade-in');
 
-  // ===== Smooth scroll for anchor links (fallback) =====
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
+const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -100px 0px" // Trigger slightly before the element enters the viewport
+};
 
-  // ===== Contact form (Google-form style) =====
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-
-  function setFormStatus(message, kind) {
-    if (!formStatus) return;
-    formStatus.classList.remove('ok', 'err');
-    if (kind) formStatus.classList.add(kind);
-    formStatus.textContent = message || '';
-  }
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const name = String(document.getElementById('name')?.value || '').trim();
-      const email = String(document.getElementById('email')?.value || '').trim();
-      const subject = String(document.getElementById('subject')?.value || '').trim();
-      const message = String(document.getElementById('message')?.value || '').trim();
-
-      if (!name || !email || !subject || !message) {
-        setFormStatus('Please fill in all fields.', 'err');
-        return;
-      }
-
-      const to = 'lozawanaw@gmail.com';
-      const mailSubject = encodeURIComponent('Portfolio message: ' + subject);
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        message
-      );
-
-      setFormStatus('Opening your email app...', 'ok');
-      window.location.href = 'mailto:' + to + '?subject=' + mailSubject + '&body=' + body;
-      contactForm.reset();
-      setTimeout(function () {
-        setFormStatus('Message prepared. If your email app didn’t open, copy your message and email me directly.', 'ok');
-      }, 800);
-    });
-  }
-
-  // ===== Scroll reveal motion =====
-  const revealEls = document.querySelectorAll('.reveal');
-  if (!revealEls.length) return;
-
-  if (!('IntersectionObserver' in window)) {
-    revealEls.forEach(function (el) {
-      el.classList.add('in-view');
-    });
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('show');
+        
+             
         }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -10% 0px' }
-  );
+    });
+}, appearOptions);
 
-  revealEls.forEach(function (el) {
-    observer.observe(el);
-  });
-})();
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
