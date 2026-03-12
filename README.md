@@ -51,7 +51,7 @@ Open `index.html` in your browser
 
 - Gmail:lozawanaw@gmail.com  
 - LinkedIn:https://www.linkedin.com/in/finoteloza-wanaw-3b22863a9/
-- GitHub:https://github.com/ 
+- GitHub:[https://github.com/](https://github.com/finoteloza549) 
 - Telegram:https://t.me/fiffyee  
 
 I am open to internships, collaborations, and learning opportunities.
